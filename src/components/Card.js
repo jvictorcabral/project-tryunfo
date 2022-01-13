@@ -5,9 +5,9 @@ class Card extends React.Component {
   render() {
     const { cardName,
       cardDescription,
-      cardAtt1,
-      cardAtt2,
-      cardAtt3,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
       cardImage,
       cardRare,
       cardTrunfo } = this.props;
@@ -26,9 +26,9 @@ class Card extends React.Component {
         />
 
         <p data-testid="description-card">{ cardDescription }</p>
-        <span data-testid="attr1-card">{ cardAtt1 }</span>
-        <span data-testid="attr2-card">{ cardAtt2 }</span>
-        <span data-testid="attr3-card">{ cardAtt3 }</span>
+        <span data-testid="attr1-card">{ cardAttr1 }</span>
+        <span data-testid="attr2-card">{ cardAttr2 }</span>
+        <span data-testid="attr3-card">{ cardAttr3 }</span>
         <span data-testid="rare-card">{ cardRare }</span>
         {
           cardTrunfo ? <span data-testid="trunfo-card">Super Trunfo</span> : <p />
@@ -41,9 +41,9 @@ class Card extends React.Component {
 Card.propTypes = {
   cardName: PropTypes.string.isRequired,
   cardDescription: PropTypes.string.isRequired,
-  cardAtt1: PropTypes.number.isRequired,
-  cardAtt2: PropTypes.number.isRequired,
-  cardAtt3: PropTypes.number.isRequired,
+  cardAttr1: PropTypes.number.isRequired,
+  cardAttr2: PropTypes.number.isRequired,
+  cardAttr3: PropTypes.number.isRequired,
   cardImage: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
   cardTrunfo: PropTypes.bool.isRequired,

@@ -10,16 +10,17 @@ class App extends React.Component {
       cardName: '',
       cardDescription: '',
       cardImage: '',
-      cardAtt1: 0,
-      cardAtt2: 0,
-      cardAtt3: 0,
+      cardAttr1: 0,
+      cardAttr2: 0,
+      cardAttr3: 0,
       cardRare: '',
       cardTrunfo: false,
     };
   }
 
   onInputChange({ target }) {
-    const { name, value } = target;
+    const { name } = target;
+    const value = target.type !== 'checkbox' ? target.value : target.checked;
 
     this.setState({
       [name]: value,
@@ -31,9 +32,9 @@ class App extends React.Component {
       cardName,
       cardDescription,
       cardImage,
-      cardAtt1,
-      cardAtt2,
-      cardAtt3,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
       cardRare,
       cardTrunfo } = this.state;
     return (
@@ -43,9 +44,9 @@ class App extends React.Component {
           cardName={ cardName }
           cardDescription={ cardDescription }
           cardImage={ cardImage }
-          cardAtt1={ cardAtt1 }
-          cardAtt2={ cardAtt2 }
-          cardAtt3={ cardAtt3 }
+          cardAttr1={ cardAttr1 }
+          cardAttr2={ cardAttr2 }
+          cardAttr3={ cardAttr3 }
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
         />
@@ -55,9 +56,9 @@ class App extends React.Component {
           cardName={ cardName }
           cardDescription={ cardDescription }
           cardImage={ cardImage }
-          cardAtt1={ cardAtt1 }
-          cardAtt2={ cardAtt2 }
-          cardAtt3={ cardAtt3 }
+          cardAttr1={ cardAttr1 }
+          cardAttr2={ cardAttr2 }
+          cardAttr3={ cardAttr3 }
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
         />
