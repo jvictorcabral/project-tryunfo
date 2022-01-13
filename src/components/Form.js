@@ -5,9 +5,9 @@ class Form extends React.Component {
   render() {
     const { cardName,
       cardDescription,
-      cardAttr1,
-      cardAttr2,
-      cardAttr3,
+      cardAtt1,
+      cardAtt2,
+      cardAtt3,
       cardImage,
       cardRare,
       cardTrunfo,
@@ -20,12 +20,14 @@ class Form extends React.Component {
         <input
           type="text"
           data-testid="name-input"
+          name="cardName"
           value={ cardName }
           onChange={ onInputChange }
         />
 
         <textarea
           data-testid="description-input"
+          name="cardDescription"
           value={ cardDescription }
           onChange={ onInputChange }
         />
@@ -33,32 +35,41 @@ class Form extends React.Component {
         <input
           type="number"
           data-testid="attr1-input"
-          value={ cardAttr1 }
+          name="cardAtt1"
+          value={ cardAtt1 }
           onChange={ onInputChange }
         />
 
         <input
           type="number"
           data-testid="attr2-input"
-          value={ cardAttr2 }
+          name="cardAtt2"
+          value={ cardAtt2 }
           onChange={ onInputChange }
         />
 
         <input
           type="number"
           data-testid="attr3-input"
-          value={ cardAttr3 }
+          name="cardAtt3"
+          value={ cardAtt3 }
           onChange={ onInputChange }
         />
 
         <input
           type="text"
           data-testid="image-input"
+          name="cardImage"
           value={ cardImage }
           onChange={ onInputChange }
         />
 
-        <select data-testid="rare-input" value={ cardRare } onChange={ onInputChange }>
+        <select
+          ata-testid="rare-input"
+          name="cardRare"
+          value={ cardRare }
+          onChange={ onInputChange }
+        >
           <option value="normal">normal</option>
           <option value="raro">raro</option>
           <option value="muito raro">muito raro</option>
@@ -67,6 +78,7 @@ class Form extends React.Component {
         <input
           type="checkbox"
           data-testid="trunfo-input"
+          name="cardTrunfo"
           checked={ cardTrunfo }
           onChange={ onInputChange }
         />
@@ -88,9 +100,9 @@ class Form extends React.Component {
 Form.propTypes = {
   cardName: PropTypes.string.isRequired,
   cardDescription: PropTypes.string.isRequired,
-  cardAttr1: PropTypes.string.isRequired,
-  cardAttr2: PropTypes.string.isRequired,
-  cardAttr3: PropTypes.string.isRequired,
+  cardAtt1: PropTypes.number.isRequired,
+  cardAtt2: PropTypes.number.isRequired,
+  cardAtt3: PropTypes.number.isRequired,
   cardImage: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
   cardTrunfo: PropTypes.bool.isRequired,
