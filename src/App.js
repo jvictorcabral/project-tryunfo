@@ -15,7 +15,7 @@ class App extends React.Component {
       cardAttr3: '0',
       cardRare: '',
       cardTrunfo: false,
-      disable: true,
+      isSaveButtonDisabled: true,
     };
   }
 
@@ -70,7 +70,7 @@ class App extends React.Component {
       cardAttr3,
       cardRare,
       cardTrunfo,
-      disable } = this.state;
+      isSaveButtonDisabled } = this.state;
     return (
       <div>
         <Form
