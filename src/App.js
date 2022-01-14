@@ -54,9 +54,9 @@ class App extends React.Component {
       || Number(cardAttr3) > maxIndividual
       || Number(cardAttr3) < 0
       || cardRare === '') {
-      this.setState({ disable: true });
+      this.setState({ isSaveButtonDisabled: true });
     } else {
-      this.setState({ disable: false });
+      this.setState({ isSaveButtonDisabled: false });
     }
   }
 
@@ -83,7 +83,7 @@ class App extends React.Component {
           cardAttr3={ cardAttr3 }
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
-          disable={ disable }
+          isSaveButtonDisabled={ isSaveButtonDisabled }
         />
 
         <Card
