@@ -10,11 +10,12 @@ class App extends React.Component {
       cardName: '',
       cardDescription: '',
       cardImage: '',
-      cardAttr1: 0,
-      cardAttr2: 0,
-      cardAttr3: 0,
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
       cardRare: '',
       cardTrunfo: false,
+      disable: true,
     };
   }
 
@@ -24,7 +25,39 @@ class App extends React.Component {
 
     this.setState({
       [name]: value,
-    });
+    }, () => this.onSaveButtonClick());
+  }
+
+  onSaveButtonClick() {
+    const {
+      cardName,
+      cardDescription,
+      cardImage,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardRare } = this.state;
+    const maxIndividual = 90;
+    const maxAll = 210;
+
+    if (cardName === ''
+      || cardDescription === ''
+      || cardImage === ''
+      || Number(cardAttr1) + Number(cardAttr2) + Number(cardAttr3) > maxAll
+      || cardAttr1 === 0
+      || Number(cardAttr1) > maxIndividual
+      || Number(cardAttr1) < 0
+      || cardAttr2 === 0
+      || Number(cardAttr2) > maxIndividual
+      || Number(cardAttr2) < 0
+      || cardAttr3 === 0
+      || Number(cardAttr3) > maxIndividual
+      || Number(cardAttr3) < 0
+      || cardRare === '') {
+      this.setState({ disable: true });
+    } else {
+      this.setState({ disable: false });
+    }
   }
 
   render() {
@@ -36,7 +69,8 @@ class App extends React.Component {
       cardAttr2,
       cardAttr3,
       cardRare,
-      cardTrunfo } = this.state;
+      cardTrunfo,
+      disable } = this.state;
     return (
       <div>
         <Form
@@ -49,6 +83,7 @@ class App extends React.Component {
           cardAttr3={ cardAttr3 }
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
+          disable={ disable }
         />
 
         <Card
