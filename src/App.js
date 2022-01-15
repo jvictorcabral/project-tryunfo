@@ -17,7 +17,7 @@ class App extends React.Component {
       cardTrunfo: false,
       isSaveButtonDisabled: true,
     };
-    
+
     this.onInputChange = this.onInputChange.bind(this);
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
   }
@@ -25,7 +25,7 @@ class App extends React.Component {
   onInputChange({ target }) {
     const { name } = target;
     const value = target.type !== 'checkbox' ? target.value : target.checked;
-    
+
     this.setState({
       [name]: value,
     }, () => {
@@ -43,17 +43,17 @@ class App extends React.Component {
       if (cardName === ''
       || cardDescription === ''
       || cardImage === ''
-        || Number(cardAttr1) + Number(cardAttr2) + Number(cardAttr3) > maxAll
-        || cardAttr1 === 0
-        || Number(cardAttr1) > maxIndividual
-        || Number(cardAttr1) < 0
-        || cardAttr2 === 0
-        || Number(cardAttr2) > maxIndividual
-        || Number(cardAttr2) < 0
-        || cardAttr3 === 0
-        || Number(cardAttr3) > maxIndividual
-        || Number(cardAttr3) < 0
-        || cardRare === '') {
+      || Number(cardAttr1) + Number(cardAttr2) + Number(cardAttr3) > maxAll
+      || cardAttr1 === 0
+      || Number(cardAttr1) > maxIndividual
+      || Number(cardAttr1) < 0
+      || cardAttr2 === 0
+      || Number(cardAttr2) > maxIndividual
+      || Number(cardAttr2) < 0
+      || cardAttr3 === 0
+      || Number(cardAttr3) > maxIndividual
+      || Number(cardAttr3) < 0
+      || cardRare === '') {
         this.setState({ isSaveButtonDisabled: true });
       } else {
         this.setState({ isSaveButtonDisabled: false });
@@ -62,7 +62,7 @@ class App extends React.Component {
   }
 
   onSaveButtonClick() {
-       const {
+    const {
       cardName,
       cardDescription,
       cardAttr1,
@@ -83,18 +83,18 @@ class App extends React.Component {
       cardAttr3,
       cardRare };
 
-      this.setState(({ cards }) => ({
-        cards: [...cards, newCard],
-        cardName: '',
-        cardDescription: '',
-        cardAttr1: '0',
-        cardAttr2: '0',
-        cardAttr3: '0',
-        cardImage: '',
-        cardRare: '',
-        isSaveButtonDisabled: true,
-        // cardTrunfo: false,
-      }));
+    this.setState(({ cards }) => ({
+      cards: [...cards, newCard],
+      cardName: '',
+      cardDescription: '',
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
+      cardImage: '',
+      cardRare: '',
+      isSaveButtonDisabled: true,
+      // cardTrunfo: false,
+    }));
   }
 
   render() {
