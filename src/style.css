@@ -4,6 +4,7 @@
   flex-direction: row;
   justify-content: space-evenly;
 }
+
 .div-section2 {
   display: flex;
   flex-wrap: wrap;
