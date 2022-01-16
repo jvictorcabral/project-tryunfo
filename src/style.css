@@ -15,12 +15,12 @@
 }
 
 .div-card h1 {
-  margin: 0px auto 12px;
+  margin: 0 auto 12px;
 }
 
 .div-card img {
   border-radius: 10px;
-  margin: 0px 12px;
+  margin: 0 12px;
 }
 
 .div-card p {
@@ -28,7 +28,7 @@
 }
 
 .div-card span {
-  margin: 12px 12px 0px;
+  margin: 12px 12px 0;
 }
 
 .form-class label {
